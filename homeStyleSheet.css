@@ -1,0 +1,40 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #B3E5FC;
+}
+.navBar {
+    grid-row: 1;
+    background-color: #8c3503;
+    color: white;
+    padding: 1rem;
+    width: auto;
+    height: auto;
+    display: justify-content;
+}
+.navBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.navBar a {
+    color: white;
+    text-decoration: none;
+}
+.content {
+    grid-row: 2;
+    padding: 2rem;
+}
+.footer {
+    grid-row: 3;
+    background-color: #8c3503;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
