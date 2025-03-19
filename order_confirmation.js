@@ -1,11 +1,11 @@
 // order_confirmation.js
 
-// 🖨 Print Receipt Function
+//Print Receipt Function
 document.getElementById("print-receipt").addEventListener("click", function () {
     window.print();
 });
 
-// 📋 Copy Order Details to Clipboard
+//Copy Order Details to Clipboard
 document.getElementById("copy-details").addEventListener("click", function () {
     const orderDetails = document.getElementById("order-details").innerText;
     navigator.clipboard.writeText(orderDetails).then(() => {
@@ -13,7 +13,7 @@ document.getElementById("copy-details").addEventListener("click", function () {
     });
 });
 
-// ⏳ Estimated Delivery Countdown
+//Delivery Countdown
 function updateCountdown() {
     const deliveryDate = new Date("2025-03-22"); // Change to actual delivery date
     const now = new Date();
