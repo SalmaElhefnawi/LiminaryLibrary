@@ -1,0 +1,142 @@
+/* order_confirmation.css */
+
+/* Classic Bookstore Theme */
+body {
+    font-family: 'Garamond', serif;
+    background-color: #f8f1e4; /* Warm parchment background */
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fffdf7; /* Soft vintage paper color */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border: 3px solid #8b5e3c; /* Elegant brown border */
+    position: relative;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    color: #5a3825;
+    margin-bottom: 10px;
+}
+
+.logo::before, .logo::after {
+    content: "📚"; /* Decorative book emoji */
+    margin: 0 8px;
+}
+
+h1 {
+    color: #5a3825;
+    font-size: 26px;
+    border-bottom: 2px dashed #8b5e3c;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.details {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.7;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fdf8e6; /* Light classic paper tone */
+    border-left: 4px solid #8b5e3c;
+}
+
+.details strong {
+    color: #5a3825;
+}
+
+.order-number {
+    font-size: 22px;
+    font-weight: bold;
+    color: #8b5e3c;
+    margin-bottom: 10px;
+}
+
+.book-cover {
+    display: block;
+    width: 120px;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #8b5e3c;
+}
+
+.summary {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: left;
+    background: #fff8e6;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #b89b72;
+}
+
+.summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.summary p strong {
+    color: #5a3825;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+.back-btn {
+    background: #8b5e3c;
+    color: white;
+}
+
+.back-btn:hover {
+    background: #5a3825;
+}
+
+.print-btn {
+    background: #5a3825;
+    color: white;
+}
+
+.print-btn:hover {
+    background: #3d2718;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #5a3825;
+    font-style: italic;
+}
+
+.divider {
+    border-top: 2px dashed #8b5e3c;
+    margin: 15px 0;
+}
