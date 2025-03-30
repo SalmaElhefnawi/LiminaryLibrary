@@ -1,44 +1,115 @@
-<html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="homeStyleSheet.css">
-   
-    </head>
-    <body>
-        <div class="navBar">
-            <ul class="horizontalList">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Disable default zooming, setting proper scales-->
+    <title>Luminary Library - Your Online Bookstore</title>
+    <link rel="icon" href="favicon.ico"> <!-- Favicon for the website -->
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Luminary Library</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Books</a></li>
+                    <li><a href="index.html">Categories</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="index.html">Sign Up</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="content">
-            <h1>Welcome to my website</h1>
-            <p>This is a simple website created using HTML and CSS</p>
-            <p>It has a navigation bar with links to Home, About, Contact and Login pages</p>
-            <h2>Features</h2>
-            <ul>
-                <li>Simple and easy to use</li>
-                <li>Responsive design</li>
-                <li>Navigation bar</li>
-            </ul>
+    </header>
+
+    <section class="hero"> <!--using section for its semantic meaning (header, footer, etc)--> 
+        <div class="container">
+            <div class="hero-content">
+                <img src="images/logo.png" alt="Luminary Library Logo" class="hero-logo">
+                <h1>The Brightest Minds Start with the Right Books</h1>
+                <p>"Explore our curated collection of bestselling, classic, and hidden gem books on Islam, self-improvement, and academia—each chosen to inspire and educate.</p>
+                <a href="index.html" class="btn">Browse Collection</a>
+            </div>
         </div>
-        <div class="footer">
-            <p>Footer content here</p>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Books</h2>
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Silent Patient</h3>
+                        <p class="book-author">Alex Michaelides</p>
+                        <p class="book-price">$14.99</p>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Educated</h3>
+                        <p class="book-author">Tara Westover</p>
+                        <p class="book-price">$12.99</p>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Midnight Library</h3>
+                        <p class="book-author">Matt Haig</p>
+                        <p class="book-price">$16.99</p>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Where the Crawdads Sing</h3>
+                        <p class="book-author">Delia Owens</p>
+                        <p class="book-price">$15.99</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="div1">
-            <ul class="horizontalList">
-               <a href="test.html" >Home</a>
-               <a href="test.html">About</a>
-               <a href="test.html">Sign Up</a>
-               <a href="test.html">Contact Us</a>
-            </ul>
-    </div>
-    <div class="div2">
-        <h1>WELCOME TO OUR WEBSITE</h1>
-       <p>JANA</p>
-        <p>Our website is a platform where you can find the best deals on the internet. We have a wide range of products and services that you can choose from. Our website is easy to use and navigate, so you can find what you are looking for
-    </body>
+
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="floating-shelf">
+        <div class="container">
+            <h2 class="section-title">Our Bestsellers</h2>
+            <div class="shelf">
+                <div class="floating-book" style="animation-delay: 0.1s">
+                    <div class="spine" style="background-color: #8b1d1d;"></div>
+                    <div class="cover" style="background-color: #8b1d1d;"></div>
+                </div>
+                <!-- Add 4-5 more floating-book divs with different colors -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Luminary Library. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js">
+    </script>
+</body>
 </html>
 
