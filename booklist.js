@@ -171,3 +171,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize with all books displayed
     displayBooks(books);
 });
+ 
