@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>My Dashboard | Bookhaven</title>
-    <link rel="stylesheet" href="userDashboard.css" />
+    <title>My Dashboard | Luminary Library</title>
+    <link rel="stylesheet" href="../css/userDashboard.css" />
+    <link rel="stylesheet" href="../css/navBar.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
+    <!-- Add header navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Luminary Library</div>
+                <ul class="nav-links">
+                    <li><a href="../html/index.html">Home</a></li>
+                    <li><a href="../html/booklist.html">Books</a></li>
+                    <li><a href="../html/aboutus.html">About Us</a></li>
+                    <li><a href="../html/cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
@@ -20,7 +36,7 @@
 
             <nav class="dashboard-nav">
                 <ul>
-                    <li data-section="wishlist"><i class="fas fa-heart"></i> Wishlist</li>
+                    <li data-section="wishlist" class="active"><i class="fas fa-heart"></i> Wishlist</li>
                     <li data-section="profile"><i class="fas fa-user"></i> My Profile</li>
                     <li data-section="orders"><i class="fas fa-shopping-bag"></i> My Orders</li>
                     <li id="logout-btn"><i class="fas fa-sign-out-alt"></i> Log Out</li>
@@ -33,7 +49,21 @@
             <!-- Wishlist Section -->
             <section id="wishlist-section" class="content-section active">
                 <h2><i class="fas fa-heart"></i> My Wishlist</h2>
-                <div class="wishlist-grid" id="wishlist-items"></div>
+                <div class="wishlist-grid">
+                    <!-- Static Atomic Habits Book Entry -->
+                    <div class="wishlist-item">
+                        <img src="../images/AtomicHabits.jpg" alt="Atomic Habits" class="wishlist-cover">
+                        <div class="wishlist-details">
+                            <h3>Atomic Habits</h3>
+                            <p>By James Clear</p>
+                            <p class="price">$16.99</p>
+                            <div class="wishlist-actions">
+                                <a href="cart.html" class="wishlist-btn add-to-cart">Add to Cart</a>
+                                <button class="wishlist-btn remove-item">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- Profile Section -->
@@ -63,6 +93,6 @@
             </section>
         </main>
     </div>
-    <script src="userDashboard.js"></script>
+    <script src="../js/userDashboard.js"></script>
 </body>
 </html>
