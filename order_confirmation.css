@@ -1,8 +1,16 @@
-/* order_confirmation.css */
+/* order_confirmation.css - Maroon Theme */
+:root {
+    --primary-maroon: #5a0017;
+    --secondary-maroon: #3d000f;
+    --dark-maroon: #2a000a;
+    --light-maroon: #f5e6ea;
+    --accent-maroon: #7a1c2a;
+    --highlight: #9e3a4a;
+}
 
 body {
     font-family: 'Garamond', serif;
-    background-color: #f8f1e4; /* Warm parchment background */
+    background-color: var(--light-maroon);
     text-align: center;
     padding: 30px;
     margin: 0;
@@ -11,11 +19,11 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
-    background: #fffdf7; /* Soft vintage paper color */
+    background: white;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    border: 3px solid #8b5e3c; /* Elegant brown border */
+    border: 3px solid var(--primary-maroon);
     position: relative;
 }
 
@@ -23,19 +31,19 @@ body {
     font-size: 28px;
     font-weight: bold;
     font-style: italic;
-    color: #5a3825;
+    color: var(--primary-maroon);
     margin-bottom: 10px;
 }
 
 .logo::before, .logo::after {
-    content: "📚"; /* Decorative book emoji */
+    content: "📚";
     margin: 0 8px;
 }
 
 h1 {
-    color: #5a3825;
+    color: var(--primary-maroon);
     font-size: 26px;
-    border-bottom: 2px dashed #8b5e3c;
+    border-bottom: 2px dashed var(--accent-maroon);
     padding-bottom: 12px;
     margin-bottom: 15px;
 }
@@ -46,18 +54,18 @@ h1 {
     line-height: 1.7;
     padding: 15px;
     border-radius: 8px;
-    background: #fdf8e6; /* Light classic paper tone */
-    border-left: 4px solid #8b5e3c;
+    background: var(--light-maroon);
+    border-left: 4px solid var(--accent-maroon);
 }
 
 .details strong {
-    color: #5a3825;
+    color: var(--primary-maroon);
 }
 
 .order-number {
     font-size: 22px;
     font-weight: bold;
-    color: #8b5e3c;
+    color: var(--accent-maroon);
     margin-bottom: 10px;
 }
 
@@ -67,17 +75,17 @@ h1 {
     margin: 15px auto;
     border-radius: 5px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #8b5e3c;
+    border: 2px solid var(--primary-maroon);
 }
 
 .summary {
     margin-top: 20px;
     font-size: 18px;
     text-align: left;
-    background: #fff8e6;
+    background: var(--light-maroon);
     padding: 15px;
     border-radius: 8px;
-    border: 2px solid #b89b72;
+    border: 2px solid var(--accent-maroon);
 }
 
 .summary p {
@@ -88,7 +96,7 @@ h1 {
 }
 
 .summary p strong {
-    color: #5a3825;
+    color: var(--primary-maroon);
 }
 
 .buttons {
@@ -111,31 +119,31 @@ h1 {
 }
 
 .back-btn {
-    background: #8b5e3c;
+    background: var(--primary-maroon);
     color: white;
 }
 
 .back-btn:hover {
-    background: #5a3825;
+    background: var(--dark-maroon);
 }
 
 .print-btn {
-    background: #5a3825;
+    background: var(--accent-maroon);
     color: white;
 }
 
 .print-btn:hover {
-    background: #3d2718;
+    background: var(--secondary-maroon);
 }
 
 .footer {
     margin-top: 25px;
     font-size: 14px;
-    color: #5a3825;
+    color: var(--primary-maroon);
     font-style: italic;
 }
 
 .divider {
-    border-top: 2px dashed #8b5e3c;
+    border-top: 2px dashed var(--accent-maroon);
     margin: 15px 0;
 }

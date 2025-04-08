@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sample book data
     const books = [
         {
-            title: "The Silent Patient",
-            author: "Alex Michaelides",
-            price: 14.99,
+            title: "Web Development with Node and Express",
+            author: "Ethan Brown",
+            price: 500,
             category: "fiction",
-            image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "./images/webBook.jpg",
             rating: 4.5 // out of 5 
         },
         {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Tara Westover",
             price: 12.99,
             category: "non-fiction",
-            image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "./images/educated.jpg",
             rating: 4.7 // out of 5
         },
         {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Brianna Wiest",
             price: 9.99,
             category: "self-improvement",
-            image: "https://m.media-amazon.com/images/I/41%2B0g1j7JLL._SY425_.jpg",
+            image: "./images/101-essays.jpg",
             rating: 4.6 // out of 5
         },
         {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "James Clear",
             price: 11.99,
             category: "self-improvement",
-            image: "https://m.media-amazon.com/images/I/51xwGSNX-EL._SY425_.jpg",
+            image: "./images/atomic-habits.jpg",
             rating: 4.8 // out of 5
         },
         {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Cal Newport",
             price: 13.99,
             category: "academia",
-            image: "https://m.media-amazon.com/images/I/41d1gVUK1yL._SY425_.jpg",
+            image: "./images/deep-work.jpg",
             rating: 4.4 // out of 5 
         },
         {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Muhammad Asad",
             price: 18.95,
             category: "islam",
-            image: "https://m.media-amazon.com/images/I/41K+MCxTuRL._SY425_.jpg",
+            image: "./images/road-to-mecca.jpg",
             rating: 4.5 // out of 5 
         },
         {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Matt Haig",
             price: 16.99,
             category: "fiction",
-            image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "./images/midnight-library.jpg",
             rating: 4.3 // out of 5 
         },
         {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Delia Owens",
             price: 15.99,
             category: "fiction",
-            image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            image: "./images/crawdads-sing.jpg",
             rating: 4.6 // out of 5 
         }
     ];
