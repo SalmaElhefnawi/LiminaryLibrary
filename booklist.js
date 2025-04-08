@@ -200,4 +200,5 @@ function generateStarRating(rating) {
     // Initialize with all books displayed
     displayBooks(books);
 });
+
  
