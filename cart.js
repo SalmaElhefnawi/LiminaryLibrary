@@ -124,7 +124,7 @@ function updateCart() {
     // Add each cart item
     cart.forEach(item => {
         cartHTML += `
-            <div class="cart-item" data-id="${item.id}">
+            <div class="cart-item" data-id="{item.id}">
                 <div>
                     <img src="${item.image}" alt="${item.title}" class="item-image">
                 </div>
@@ -265,7 +265,6 @@ function saveCart() {
 
 // Proceed to checkout
 function proceedToCheckout() {
-    // In a real application, this would redirect to a checkout page
-    alert('Proceeding to checkout...');
-    // window.location.href = 'checkout.html';
+    // Redirect to the order confirmation page
+    window.location.href = 'order_confirmation.html';
 }

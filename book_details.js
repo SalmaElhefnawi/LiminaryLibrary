@@ -1,6 +1,5 @@
-// book_details.js - Handles book details page functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Sample book data (in a real app, this would come from an API or shared data file)
+document.addEventListener('DOMContentLoaded', function () {
+    // Sample book data
     const bookData = {
         'atomic-habits': {
             title: "Atomic Habits",
@@ -13,137 +12,201 @@ document.addEventListener('DOMContentLoaded', function() {
             pages: "320",
             rating: 4.8,
             reviews: 50000
-        },
-        'win-friends': {
-            title: "How to Win Friends & Influence People",
-            author: "Dale Carnegie",
-            price: 12.99,
-            originalPrice: 18.99,
-            image: "https://m.media-amazon.com/images/I/71huv2eUZBL.jpg",
-            description: "For over 80 years, this classic has taught millions the fundamental techniques for handling people, winning friends, and influencing others while avoiding conflict.",
-            published: "1936",
-            pages: "291",
-            rating: 4.7,
-            reviews: 100000
         }
     };
 
-    // Get book ID from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const bookId = urlParams.get('book');
-    
+    const bookId = urlParams.get('book') || 'atomic-habits';
+
     if (bookId && bookData[bookId]) {
         loadBookDetails(bookData[bookId]);
         initBookEffects();
-    } else {
-        // Redirect to book listing if no valid book ID
-        window.location.href = 'booklist.html';
     }
 
     function loadBookDetails(book) {
-        // Update page content
-        document.title = `${book.title} | Luminary Library`;
-        
-        // Update book info
-        document.querySelector('.book-header h1').textContent = book.title;
-        document.querySelector('.book-header h2').textContent = `by ${book.author}`;
-        document.querySelector('.current-price').textContent = `$${book.price.toFixed(2)}`;
-        document.querySelector('.original-price').textContent = `$${book.originalPrice.toFixed(2)}`;
-        document.querySelector('.book-description p').textContent = book.description;
-        
-        // Update rating
-        const starsContainer = document.querySelector('.stars');
-        starsContainer.innerHTML = '';
-        const fullStars = Math.floor(book.rating);
-        const hasHalfStar = book.rating % 1 >= 0.5;
-        
-        for (let i = 0; i < fullStars; i++) {
-            starsContainer.innerHTML += '<i class="fas fa-star"></i>';
-        }
-        if (hasHalfStar) {
-            starsContainer.innerHTML += '<i class="fas fa-star-half-alt"></i>';
-        }
-        document.querySelector('.review-count').textContent = `(${book.reviews.toLocaleString()} reviews)`;
-        
-        // Update meta info
-        const metaItems = document.querySelectorAll('.meta-item');
-        metaItems[0].querySelector('span').textContent = `Published: ${book.published}`;
-        metaItems[1].querySelector('span').textContent = `Pages: ${book.pages}`;
-        
-        // Update book cover images
-        document.querySelector('.cover-front img').src = book.image;
-        document.querySelector('.back-content h3').textContent = book.title.toUpperCase();
+        console.log("Loading book details for:", book.title);
+        // Your implementation
     }
 
     function initBookEffects() {
-        const book3d = document.querySelector('.book-3d');
-        const bookCover = document.querySelector('.book-cover');
-        
-        if (!book3d || !bookCover) {
-            console.error("Book 3D elements not found!");
-            return;
+        let cart = JSON.parse(localStorage.getItem('cart')) || {};
+        const increaseBtn = document.querySelector('.increase-btn');
+        const decreaseBtn = document.querySelector('.decrease-btn');
+        const qtyInput = document.querySelector('.qty-input');
+        const maxQty = 10;
+
+        increaseBtn.addEventListener('click', function () {
+            let currentQty = parseInt(qtyInput.value);
+            if (currentQty < maxQty) {
+                qtyInput.value = currentQty + 1;
+                updateCartQuantity(bookId, currentQty + 1);
+            }
+        });
+
+        decreaseBtn.addEventListener('click', function () {
+            let currentQty = parseInt(qtyInput.value);
+            if (currentQty > 1) {
+                qtyInput.value = currentQty - 1;
+                updateCartQuantity(bookId, currentQty - 1);
+            }
+        });
+
+        function updateCartQuantity(bookId, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || {};
+            if (cart[bookId]) {
+                cart[bookId].quantity = quantity;
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
         }
-        
-        // Mouse move effect for 3D book
-        document.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            
-            book3d.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-            bookCover.style.transform = `rotateY(${xAxis * 1.5}deg) rotateX(${yAxis * 1.5}deg)`;
-        });
-        
-        // Reset position when mouse leaves
-        document.addEventListener('mouseleave', () => {
-            book3d.style.transform = 'rotateY(0deg) rotateX(0deg)';
-            bookCover.style.transform = 'rotateY(0deg) rotateX(0deg)';
-        });
-        
-        // Add to cart button effect
-        const addToCartBtn = document.querySelector('.add-to-cart');
-        if (addToCartBtn) {
-            addToCartBtn.addEventListener('click', function() {
-                this.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
-                this.style.backgroundColor = '#2a7f2a';
-                
+
+        const addToCartBtn = document.querySelector('.btn-primary');
+        const removeFromCartBtn = document.querySelector('.remove-from-cart');
+
+        if (cart[bookId]) {
+            addToCartBtn.style.display = 'none';
+            removeFromCartBtn.style.display = 'flex';
+        }
+
+        addToCartBtn.addEventListener('click', function () {
+            cart[bookId] = {
+                title: bookData[bookId].title,
+                price: bookData[bookId].price,
+                image: bookData[bookId].image,
+                quantity: 1
+            };
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+            this.style.backgroundColor = '#2a7f2a';
+
+            removeFromCartBtn.style.display = 'flex';
+            this.style.display = 'none';
+
+            Swal.fire({
+                title: 'Added to Cart!',
+                html: `
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                        <img src="${bookData[bookId].image}" style="width: 80px; border-radius: 5px; border: 2px solid #5a0017;">
+                        <div>
+                            <p style="margin: 0; font-weight: bold;">${bookData[bookId].title}</p>
+                            <p style="margin: 5px 0 0; color: #5a0017;">$${bookData[bookId].price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                `,
+                showCancelButton: true,
+                confirmButtonColor: '#5a0017',
+                cancelButtonColor: '#7a1c2a',
+                confirmButtonText: '<i class="fas fa-shopping-cart"></i> View Cart',
+                cancelButtonText: '<i class="fas fa-book-open"></i> Continue Shopping',
+                background: '#f5e6ea',
+                focusConfirm: false,
+                allowOutsideClick: false
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'cart.html';
+                }
                 setTimeout(() => {
-                    this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-                    this.style.backgroundColor = '';
+                    addToCartBtn.innerHTML = originalHTML;
+                    addToCartBtn.style.backgroundColor = '';
                 }, 2000);
             });
-        }
-        
-        // Wishlist button effect
-        const wishlistBtn = document.querySelector('.wishlist');
+        });
+
+        document.querySelector('.add-to-cart').addEventListener('click', function () {
+            const quantity = parseInt(document.querySelector('.qty-input').value);
+            console.log("Quantity added to cart:", quantity);
+        });
+
+        removeFromCartBtn.addEventListener('click', function () {
+            Swal.fire({
+                title: 'Remove from Cart?',
+                html: `
+                    <div style="text-align: center;">
+                        <img src="${bookData[bookId].image}" style="width: 100px; border-radius: 5px; margin-bottom: 15px;">
+                        <p>Remove <strong>${bookData[bookId].title}</strong> from your cart?</p>
+                    </div>
+                `,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#e74c3c',
+                cancelButtonColor: '#7f8c8d',
+                confirmButtonText: 'Remove',
+                background: '#f5e6ea'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    delete cart[bookId];
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    addToCartBtn.style.display = 'flex';
+                    removeFromCartBtn.style.display = 'none';
+                    addToCartBtn.innerHTML = 'Add to Cart';
+                    addToCartBtn.style.backgroundColor = '';
+
+                    Swal.fire({
+                        title: 'Removed!',
+                        text: 'Book removed from your cart',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                        background: '#f5e6ea'
+                    });
+                }
+            });
+        });
+
+        document.querySelectorAll('.social-share').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const platform = this.getAttribute('data-platform');
+                const bookTitle = encodeURIComponent(bookData[bookId].title);
+                const bookImage = encodeURIComponent(bookData[bookId].image); // Used in Pinterest sharing
+
+                let shareUrl = '';
+
+                switch (platform) {
+                    case 'facebook':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${bookUrl}`;
+                        break;
+                    case 'twitter':
+                        shareUrl = `https://twitter.com/intent/tweet?text=Check%20out%20"${bookTitle}"&url=${bookUrl}`;
+                        break;
+                    case 'pinterest':
+                        shareUrl = `https://pinterest.com/pin/create/button/?url=${bookUrl}&media=${bookImage}&description=${bookTitle}`;
+                        break;
+                    case 'email':
+                        shareUrl = `mailto:?subject=${bookTitle}&body=Check%20out%20this%20book:%20${bookUrl}`;
+                        break;
+                }
+
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            });
+        });
+
+        const wishlistBtn = document.querySelector('.btn-secondary');
         if (wishlistBtn) {
-            wishlistBtn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const icon = this.querySelector('i');
-                icon.classList.toggle('fas');
-                icon.classList.toggle('far');
-                
-                if (this.classList.contains('active')) {
-                    this.innerHTML = '<i class="fas fa-heart"></i> Wishlisted';
+            wishlistBtn.addEventListener('click', function () {
+                const isWishlisted = this.classList.toggle('wishlisted');
+                const icon = this.querySelector('svg');
+
+                if (isWishlisted) {
+                    icon.innerHTML = '<path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>';
+                    Swal.fire({
+                        icon: 'success',
+                        text: `We've saved "${bookData[bookId].title}" for you`,
+                        timer: 1500,
+                        background: '#f5e6ea'
+                    });
                 } else {
-                    this.innerHTML = '<i class="far fa-heart"></i> Wishlist';
+                    icon.innerHTML = '<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>';
+                    Swal.fire({
+                        icon: 'info',
+                        text: `Removed "${bookData[bookId].title}" from your list`,
+                        timer: 1500,
+                        background: '#f5e6ea'
+                    });
                 }
             });
         }
-        
-        // Book flip animation
-        book3d.addEventListener('click', function() {
-            const currentTransform = bookCover.style.transform;
-            bookCover.style.transform = currentTransform.includes('180deg') ? 
-                'rotateY(0deg)' : 'rotateY(180deg)';
-        });
     }
 });
-
-
-
-  fetch('books.json')
-  .then(response => response.json())
-  .then(data => {
-    const books = data.books;
-    // Render books...
-  });

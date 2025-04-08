@@ -6,6 +6,7 @@
     <title>Luminary Library - Your Online Bookstore</title>
     <link rel="icon" href="favicon.ico"> <!-- Favicon for the website -->
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="footer.css"> <!-- Footer CSS -->
 
 </head>
 
@@ -17,11 +18,12 @@
                 <div class="logo">Luminary Library</div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html">Books</a></li>
+                    <li><a href="booklist.html">Books</a></li>
                     <li><a href="contactUs.html">About</a></li>
                     <li><a href="index.html">Contact</a></li>
                     <li><a href="index.html">Sign Up</a></li>
                     <li><a href="index.html">Log In</a></li>
+                    <li><a href="cart.html">Cart</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,7 +35,6 @@
                 <img src="images/logo.png" alt="Luminary Library Logo" class="hero-logo">
                 <h1>Read. Grow. Thrive.</h1>
                 <p>"Explore our curated collection of bestselling, classic, and hidden gem books on Islam, self-improvement, and academia—each chosen to inspire and educate.</p>
-                <a href="index.html" class="btn">Browse Collection</a>
             </div>
         </div>
     </section>
@@ -43,35 +44,37 @@
             <h2 class="section-title">Featured Books</h2>
             <div class="books-grid">
                 <div class="book-card">
-                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <a href="book_details.html" style="text-decoration: none; color: inherit;">
+                        <div class="book-cover" style="background-image: url('images/AtomicHabits.jpg');"></div>
+                        <div class="book-info">
+                            <h3 class="book-title">Atomic Habits</h3>
+                            <p class="book-author">James Clear</p>
+                            <p class="book-price">EGP500</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('images/Al-rahek.jpg');"></div>
                     <div class="book-info">
-                        <h3 class="book-title">The Silent Patient</h3>
-                        <p class="book-author">Alex Michaelides</p>
-                        <p class="book-price">$14.99</p>
+                        <h3 class="book-title">الرحيق المختوم</h3>
+                        <p class="book-author">Safiur Rahman Mubarakpuri</p>
+                        <p class="book-price">EGP450</p>
                     </div>
                 </div>
                 <div class="book-card">
-                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="book-cover" style="background-image: url('images/WebBook.jpg');"></div>
                     <div class="book-info">
-                        <h3 class="book-title">Educated</h3>
-                        <p class="book-author">Tara Westover</p>
-                        <p class="book-price">$12.99</p>
+                        <h3 class="book-title">Web Development with Node and Express</h3>
+                        <p class="book-author"> Ethan Brown</p>
+                        <p class="book-price">EGP400</p>
                     </div>
                 </div>
                 <div class="book-card">
-                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="book-cover" style="background-image: url('images/101Essays.jpg');"></div>
                     <div class="book-info">
-                        <h3 class="book-title">The Midnight Library</h3>
-                        <p class="book-author">Matt Haig</p>
-                        <p class="book-price">$16.99</p>
-                    </div>
-                </div>
-                <div class="book-card">
-                    <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="book-info">
-                        <h3 class="book-title">Where the Crawdads Sing</h3>
-                        <p class="book-author">Delia Owens</p>
-                        <p class="book-price">$15.99</p>
+                        <h3 class="book-title">101 Essays That Will Change The Way You Think</h3>
+                        <p class="book-author">Brianna Wies</p>
+                        <p class="book-price">EGP499</p>
                     </div>
                 </div>
             </div>
