@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Dashboard | Bookhaven</title>
+    <link rel="stylesheet" href="userDashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="profile-pic"/>
+                <h3>Guest</h3>
+                <p class="member-since">Member since: Unknown</p>
+                <p>No bio available.</p>
+            </div>
+
+            <nav class="dashboard-nav">
+                <ul>
+                    <li data-section="wishlist"><i class="fas fa-heart"></i> Wishlist</li>
+                    <li data-section="profile"><i class="fas fa-user"></i> My Profile</li>
+                    <li data-section="orders"><i class="fas fa-shopping-bag"></i> My Orders</li>
+                    <li id="logout-btn"><i class="fas fa-sign-out-alt"></i> Log Out</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Wishlist Section -->
+            <section id="wishlist-section" class="content-section active">
+                <h2><i class="fas fa-heart"></i> My Wishlist</h2>
+                <div class="wishlist-grid" id="wishlist-items"></div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile-section" class="content-section">
+                <h2><i class="fas fa-user"></i> My Profile</h2>
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label for="profile-name">Name</label>
+                        <input type="text" id="profile-name" placeholder="Enter your name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" placeholder="Enter your email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-bio">Bio</label>
+                        <textarea id="profile-bio" placeholder="Tell us about yourself"></textarea>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders-section" class="content-section">
+                <h2><i class="fas fa-shopping-bag"></i> My Orders</h2>
+                <p>Order history will be displayed here.</p>
+            </section>
+        </main>
+    </div>
+    <script src="userDashboard.js"></script>
+</body>
+</html>
