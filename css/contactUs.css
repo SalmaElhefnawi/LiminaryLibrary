@@ -183,7 +183,10 @@
 .btn-primary {
     background-color: #7a1c2a;
     color: white;
-    width: 30%;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .btn-primary:hover {
