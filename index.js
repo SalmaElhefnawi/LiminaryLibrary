@@ -22,3 +22,18 @@
                 this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
             });
         });
+
+        let currentAngle = 0;
+const carousel = document.getElementById('categoryCarousel');
+
+function rotateCarousel(direction) {
+  currentAngle += direction * 120; // 120° per card (360°/3)
+  carousel.style.transform = `rotateY(${currentAngle}deg)`;
+  
+  // Optional: Add active class to center book
+  const books = document.querySelectorAll('.carousel-book');
+  books.forEach((book, index) => {
+    book.classList.toggle('active', index === (-currentAngle/120) % 3);
+  });
+}
+
