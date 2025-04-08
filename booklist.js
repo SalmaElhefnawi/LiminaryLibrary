@@ -6,56 +6,64 @@ document.addEventListener('DOMContentLoaded', function() {
             author: "Alex Michaelides",
             price: 14.99,
             category: "fiction",
-            image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            rating: 4.5 // out of 5 
         },
         {
             title: "Educated",
             author: "Tara Westover",
             price: 12.99,
             category: "non-fiction",
-            image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            rating: 4.7 // out of 5
         },
         {
             title: "101 Essays That Will Change The Way You Think",
             author: "Brianna Wiest",
             price: 9.99,
             category: "self-improvement",
-            image: "https://m.media-amazon.com/images/I/41%2B0g1j7JLL._SY425_.jpg"
+            image: "https://m.media-amazon.com/images/I/41%2B0g1j7JLL._SY425_.jpg",
+            rating: 4.6 // out of 5
         },
         {
             title: "Atomic Habits",
             author: "James Clear",
             price: 11.99,
             category: "self-improvement",
-            image: "https://m.media-amazon.com/images/I/51xwGSNX-EL._SY425_.jpg"
+            image: "https://m.media-amazon.com/images/I/51xwGSNX-EL._SY425_.jpg",
+            rating: 4.8 // out of 5
         },
         {
             title: "Deep Work",
             author: "Cal Newport",
             price: 13.99,
             category: "academia",
-            image: "https://m.media-amazon.com/images/I/41d1gVUK1yL._SY425_.jpg"
+            image: "https://m.media-amazon.com/images/I/41d1gVUK1yL._SY425_.jpg",
+            rating: 4.4 // out of 5 
         },
         {
             title: "The Road to Mecca",
             author: "Muhammad Asad",
             price: 18.95,
             category: "islam",
-            image: "https://m.media-amazon.com/images/I/41K+MCxTuRL._SY425_.jpg"
+            image: "https://m.media-amazon.com/images/I/41K+MCxTuRL._SY425_.jpg",
+            rating: 4.5 // out of 5 
         },
         {
             title: "The Midnight Library",
             author: "Matt Haig",
             price: 16.99,
             category: "fiction",
-            image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            rating: 4.3 // out of 5 
         },
         {
             title: "Where the Crawdads Sing",
             author: "Delia Owens",
             price: 15.99,
             category: "fiction",
-            image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            rating: 4.6 // out of 5 
         }
     ];
 
@@ -137,30 +145,51 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Function to display books
-    function displayBooks(booksToDisplay) {
-        booksList.innerHTML = '';
-        
-        if (booksToDisplay.length === 0) {
-            booksList.innerHTML = '<p class="no-books">No books match your filters. Please try different criteria.</p>';
-            return;
-        }
-        
-        booksToDisplay.forEach(book => {
-            const bookEl = document.createElement('div');
-            bookEl.className = 'book-item';
-            bookEl.innerHTML = `
-                <div class="book-image" style="background-image: url('${book.image}')"></div>
-                <div class="book-details">
-                    <h3 class="book-title">${book.title}</h3>
-                    <p class="book-author">${book.author}</p>
-                    <p class="book-price">$${book.price.toFixed(2)}</p>
-                    <span class="book-category">${formatCategory(book.category)}</span>
-                </div>
-            `;
-            booksList.appendChild(bookEl);
-        });
+    // Update the displayBooks function
+function displayBooks(booksToDisplay) {
+    booksList.innerHTML = '';
+    
+    if (booksToDisplay.length === 0) {
+        booksList.innerHTML = '<p class="no-books">No books match your filters. Please try different criteria.</p>';
+        return;
     }
     
+    booksToDisplay.forEach(book => {
+        const bookEl = document.createElement('div');
+        bookEl.className = 'book-item';
+        bookEl.innerHTML = `
+            <div class="book-image" style="background-image: url('${book.image}')"></div>
+            <div class="book-details">
+                <h3 class="book-title">${book.title}</h3>
+                <p class="book-author">${book.author}</p>
+                <div class="star-rating">
+                    ${generateStarRating(book.rating)}
+                </div>
+                <p class="book-price">$${book.price.toFixed(2)}</p>
+                <span class="book-category">${formatCategory(book.category)}</span>
+            </div>
+        `;
+        booksList.appendChild(bookEl);
+    });
+}
+
+// generateStarRating function 
+function generateStarRating(rating) {
+    let stars = '';
+    // Round to nearest half-star
+    const roundedRating = Math.round(rating * 2) / 2;
+    
+    for (let i = 1; i <= 5; i++) {
+        if (i <= roundedRating) {
+            stars += `<i class="fas fa-star"></i>`;
+        } else if (i - 0.5 === roundedRating) {
+            stars += `<i class="fas fa-star-half-alt"></i>`;
+        } else {
+            stars += `<i class="far fa-star"></i>`;
+        }
+    }
+    return stars;
+}
     // Format category for display
     function formatCategory(category) {
         return category.split('-').map(word => 
