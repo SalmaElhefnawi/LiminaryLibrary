@@ -1,2 +1,0 @@
-# bookstoreWeb
-Web project

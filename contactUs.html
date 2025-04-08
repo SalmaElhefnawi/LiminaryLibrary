@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="contactUs.css" />
+</head>
+<body>
+  <!-- Button to open the popup -->
+  <button id="openPopup" class="btn btn-primary">Contact Us</button>
+
+  <!-- Popup HTML -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-container">
+      <button id="closePopup" class="btn btn-close">X</button>
+      <div class="contact-columns">
+        <!-- Left Column: Form -->
+        <div class="form-column">
+          <div class="contact-form">
+            <h2>SEND US A MESSAGE</h2>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+                  <div class="error-message" id="nameError">Please enter your name</div>
+
+                  <input type="email" id="email" name="email" placeholder="Your Email"><br><br>
+                  <div class="error-message" id="emailError">Please enter a valid email</div>
+
+                  <input type="tel" id="phone" name="phone" placeholder="Phone Number"><br><br>
+                  <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+
+                  <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                  <div class="error-message" id="messageError">Please enter your message</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">SEND</button>
+            </form>
+            <div class="success-message" id="successMessage">
+              Thank you! Your message has been sent successfully.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Info -->
+        <div class="info-column">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Phone:</strong> +1234 5678 910</p>
+            <p><strong>Email:</strong> hello@luminarylibrary.com</p>
+            <p><strong>Address:</strong> 123 Literary Lane, Bookville</p>
+
+            <div class="social-icons">
+              <p><strong>Follow us on:</strong></p>
+              <div class="social-links">
+                <a href="https://facebook.com" target="_blank">
+                  <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                  <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="contactUs.js"></script>
+</body>
+</html>
