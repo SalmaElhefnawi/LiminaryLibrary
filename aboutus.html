@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminary Bookstore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="navBar.css">
+    <link rel="stylesheet" href="footer.css">
+    
+    <style>
+        :root {
+            --primary-maroon: #5a0017;
+            --secondary-maroon: #3d000f;
+            --dark-maroon: #2a000a;
+            --light-maroon: #f5e6ea;
+            --accent-maroon: #7a1c2a;
+            --highlight: #9e3a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body {
+            background-color: var(--light-maroon);
+            color: var(--dark-maroon);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+      
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* About Us Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-maroon);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--highlight);
+            margin: 1rem auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(90, 0, 23, 0.1);
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+
+        .about-text:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(90, 0, 23, 0.2);
+        }
+
+        .about-text::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--highlight), var(--accent-maroon));
+            z-index: -1;
+            border-radius: 12px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .about-text:hover::before {
+            opacity: 0.3;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-maroon);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--highlight);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background:"image/team.jpg" center/cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(90, 0, 23, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(90, 0, 23, 0.3), rgba(122, 28, 42, 0.7));
+            opacity: 0.7;
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+
+        .about-image .quote {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            color: white;
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 80%;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .about-image:hover .quote {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Values Section */
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: url('images/team.jpg') center/cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(90, 0, 23, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(90, 0, 23, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(90, 0, 23, 0.2);
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--highlight);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--accent-maroon);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: rotate(15deg) scale(1.1);
+            color: var(--highlight);
+        }
+
+        .value-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary-maroon);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+                height: 300px;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav> <!--Nav Bar-->
+                <div class="logo">Luminary Library</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booklist.html">Books</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="userDashboard.html">Profile</a></li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <h2 class="section-title">Our Story</h2>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Discover Luminary Library</h3>
+                <p>Established in 2025, Luminary began as a small idea between team work with a big vision - to be a beacon of knowledge and inspiration in our community. What started as a humble collection of curated titles has grown into a beloved literary destination.</p>
+                <p>Our name reflects our mission: to illuminate minds through carefully selected books that educate, entertain, and enlighten. We believe every book has the power to spark new ideas and perspectives.</p>
+                <p>Today, Luminary stands as a testament to the enduring power of physical books in a digital age. Our knowledgeable staff, cozy reading nooks, and vibrant event calendar make us more than just a bookstore - we're a cultural hub.</p>
+            </div>
+            
+            <div class="about-image">
+                <div class="quote">Read. Grow. Thrive."</div>
+            </div>
+        </div>
+        
+        <div class="values">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h4>Curated Selection</h4>
+                <p>Every book on our shelves is handpicked by our team of passionate readers.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h4>Community Focus</h4>
+                <p>More than books — we build community.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h4>Reading Culture</h4>
+                <p>We cultivate spaces that encourage lingering and discovering new favorites.</p>
+            </div>
+        </div>
+    </section>
+
+  <!-- Web Producers Section -->
+   <!-- <section class="web-producers" style="text-align: center; margin: 2rem 0;">
+        <h2 style="color: var(--primary-maroon);">Meet Our Web Producers</h2>
+        <p style="margin: 1rem 0; font-size: 1.2rem; color: var(--dark-maroon);">
+            Our talented web producers ensure a seamless online experience for our customers.
+        </p>
+      <img src="images/team.jpg" alt="Web Producer Team" style="max-width: 60%; height: 600px; border-radius: 10px;"> 
+  </section> -->
+
+    
+    <footer>
+      
+        <div class="container">
+           
+            
+  <!-- Footer with About Us -->
+    <!-- Decorative floating book icons -->
+    <i class="fas fa-book footer-book-icon" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
+    <i class="fas fa-book-open footer-book-icon" style="top: 30%; right: 15%; animation-delay: 0.5s;"></i>
+    <i class="fas fa-bookmark footer-book-icon" style="bottom: 25%; left: 20%; animation-delay: 1s;"></i>
+
+    <!-- Wave divider -->
+    <div class="footer-wave"></div>
+
+    <div class="footer-container">
+      <div class="footer-about">
+        <p>Welcome to Luminary Library Bookstore</p>
+        <div class="footer-logo">
+          <a href="aboutUs.html" style="color: white; text-decoration: none;">About Us</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="booklist.html">Books</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Literary Lane, Bookville</p>
+        <p><i class="fas fa-phone"></i> +1234 5678 910</p>
+        <p><i class="fas fa-envelope"></i> hello@luminarylibrary.com</p>
+        <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM, Sun: 10AM-6PM</p>
+
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Luminary Bookstore. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

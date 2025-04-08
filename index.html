@@ -7,6 +7,7 @@
     <link rel="icon" href="favicon.ico"> <!-- Favicon for the website -->
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="footer.css"> <!-- Footer CSS -->
+    <link rel="stylesheet" href="navBar.css">
 
 </head>
 
@@ -19,8 +20,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="booklist.html">Books</a></li>
-                    <li><a href="contactUs.html">About</a></li>
-                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="cart.html">Cart</a></li>
                      <li><a href="registration.html">Register</a></li>
                 </ul>
@@ -139,10 +139,79 @@
         </div>
     </section>
 
+    <section>
+
+        
+  <!-- Button to open the popup -->
+  <button id="openPopup" class="btn btn-primary">Contact Us</button>
+
+  <!-- Popup HTML -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-container">
+      <button id="closePopup" class="btn btn-close">X</button>
+      <div class="contact-columns">
+        <!-- Left Column: Form -->
+        <div class="form-column">
+          <div class="contact-form">
+            <h2>SEND US A MESSAGE</h2>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+                  <div class="error-message" id="nameError">Please enter your name</div>
+
+                  <input type="email" id="email" name="email" placeholder="Your Email"><br><br>
+                  <div class="error-message" id="emailError">Please enter a valid email</div>
+
+                  <input type="tel" id="phone" name="phone" placeholder="Phone Number"><br><br>
+                  <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+
+                  <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                  <div class="error-message" id="messageError">Please enter your message</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">SEND</button>
+            </form>
+            <div class="success-message" id="successMessage">
+              Thank you! Your message has been sent successfully.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Info -->
+        <div class="info-column">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Phone:</strong> +1234 5678 910</p>
+            <p><strong>Email:</strong> hello@luminarylibrary.com</p>
+            <p><strong>Address:</strong> 123 Literary Lane, Bookville</p>
+
+            <div class="social-icons">
+              <p><strong>Follow us on:</strong></p>
+              <div class="social-links">
+                <a href="https://facebook.com" target="_blank">
+                  <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                  <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </section>
+
     <footer>
         <link rel="stylesheet" href="footer.css"> <!-- Font Awesome for icons -->
         <div class="container">
-            <p>&copy; 2023 Luminary Library. All rights reserved.</p>
+           
             
   <!-- Footer with About Us -->
     <!-- Decorative floating book icons -->
@@ -164,9 +233,9 @@
       <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Bestsellers</a></li>
-          <li><a href="#">Book</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="booklist.html">Books</a></li>
+          <li><a href="cart.html">Cart</a></li>
         </ul>
       </div>
 
@@ -184,14 +253,31 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <p>&copy; 2023 Luminary Bookstore. All rights reserved.</p>
+      <p>&copy; 2025 Luminary Bookstore. All rights reserved.</p>
     </div>
   </footer>
 
 
     <script src="index.js">
-    </script>
+    </script>\  <script src="contactUs.js"></script>
 </body>
 </html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="contactUs.css" />
+</head>
+<body>
+
+
+

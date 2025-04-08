@@ -36,42 +36,6 @@ header {
     z-index: 100;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--light-maroon);
-}
-
-.nav-links .active {
-    color: var(--light-maroon);
-    border-bottom: 2px solid var(--light-maroon);
-}
 
 /* Cart Hero Section */
 .cart-hero {

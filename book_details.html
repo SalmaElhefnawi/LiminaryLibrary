@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="book_nav.js" defer></script>
     <script src="book_details.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="book_details.js" defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -14,7 +17,7 @@
             <div class="book-3d">
                 <div class="book-cover">
                     <div class="cover-front">
-                        <img src="https://m.media-amazon.com/images/I/91bYsX41DVL._AC_UF1000,1000_QL80_.jpg" 
+                        <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.AC_UF1000,1000_QL80.jpg" 
                              alt="Atomic Habits Cover" 
                              class="book-image">
                     </div>
@@ -83,34 +86,84 @@
             </div>
             
             <div class="book-actions">
-                <button class="btn btn-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                    </svg>
-                    Wishlist
-                </button>
-                
-                <button class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                    </svg>
-                    Add to Cart
-                </button>
+                    <!-- Wishlist Button -->
+                    <button class="btn btn-secondary wishlist-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                        Wishlist
+                    </button>
+                    <div class="quantity-container">
+                        <button class="qty-btn decrease-btn">-</button>
+                        <input class="qty-input" type="number" value="1" min="1">
+                        <button class="qty-btn increase-btn">+</button>
+                    </div>
+                    
+
+ 
+                    <!-- Add to Cart Button -->
+                    <button class="btn btn-primary add-to-cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        Add to Cart
+                    </button>
+                    
+                    <!-- Remove from Cart Button -->
+                    <button class="btn btn-danger remove-from-cart" style="display: none;">
+                        <i class="fas fa-trash-alt"></i> Remove from Cart
+                    </button>
+                </div>
             </div>
-            
+            <!-- Ensure IDs exist -->
+<img id="book-image">
+<h1 id="book-title"></h1>
+<p id="book-author"></p>
+<p id="book-description"></p>
+<p id="book-published"></p>
+<p id="book-pages"></p>
+<p id="book-rating"></p>
+<p id="book-price"></p>
+<p id="book-original-price"></p>
+
             <div class="book-share">
                 <span>Share:</span>
                 <div class="social-icons">
-                    <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Share on Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" class="social-share" data-platform="facebook" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20out%20this%20amazing%20book!" class="social-share" data-platform="twitter" aria-label="Share on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    
+                    <!-- Pinterest -->
+                    <a href="https://pinterest.com/pin/create/button/?url=https://example.com&media=https://m.media-amazon.com/images/I/91bYsX41DVL.AC_UF1000,1000_QL80.jpg&description=Check%20out%20this%20amazing%20book!" class="social-share" data-platform="pinterest" aria-label="Share on Pinterest">
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                    
+                    <!-- Email -->
+                    <a href="mailto:?subject=Check%20out%20this%20amazing%20book!&body=I%20found%20this%20book%20and%20thought%20you%20might%20like%20it:%20https://example.com" class="social-share" data-platform="email" aria-label="Share via Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="book_details.js"></script>
+    <footer>
+        <div class="footer-inner">
+          <p>&copy; 2023 Luminary Library. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+      </footer>
+      
+      
+    
 </body>
 </html>
-

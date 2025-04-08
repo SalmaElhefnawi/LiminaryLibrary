@@ -102,12 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        setTimeout(() => {
+            window.location.href = "index.html"; // Redirect to index.html
+        }, 2000); // Optional delay to show the success modal
         // Assuming login is successful
         showSuccessModal("Login Successful! 🎉");
     });
 
     signupForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        setTimeout(() => {
+            window.location.href = "index.html"; // Redirect to index.html
+        }, 2000); // Optional delay to show the success modal
         // Assuming signup is successful
         showSuccessModal("Signup Successful! 🎉");
     });
