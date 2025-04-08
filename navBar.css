@@ -40,10 +40,3 @@ nav {
     box-sizing: border-box;
     font-family: 'Georgia', serif;
 }
-header {
-    background: linear-gradient(to right, var(--dark-maroon), var(--primary-maroon));
-    padding: 20px 0;
-    box-shadow: 0 2px 20px rgba(42, 0, 10, 0.4);
-    position: relative;
-    overflow: hidden;
-}
