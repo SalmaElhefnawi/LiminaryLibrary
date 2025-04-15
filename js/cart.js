@@ -6,7 +6,7 @@ const books = [
         author: "Alex Michaelides",
         price: 14.99,
         category: "fiction",
-        image: "images/book1.jpg", // Replace with your actual image path
+        image: "../images/silentp.jpg", // Updated image path
         quantity: 1
     },
     {
@@ -15,7 +15,7 @@ const books = [
         author: "Tara Westover",
         price: 12.99,
         category: "non-fiction",
-        image: "images/book2.jpg", // Replace with your actual image path
+        image: "../images/educated.jpg", // Updated image path
         quantity: 2
     },
     {
@@ -24,7 +24,7 @@ const books = [
         author: "Brianna Wiest",
         price: 9.99,
         category: "self-improvement",
-        image: "images/book3.jpg", // Replace with your actual image path
+        image: "../images/101Essays.jpg", // Fixed image path
         quantity: 1
     }
 ];
@@ -37,7 +37,7 @@ const recommendedBooks = [
         author: "James Clear",
         price: 11.99,
         category: "self-improvement",
-        image: "images/book4.jpg" // Replace with your actual image path
+        image: "../images/AtomicHabits.jpg"
     },
     {
         id: 5,
@@ -45,7 +45,7 @@ const recommendedBooks = [
         author: "Cal Newport",
         price: 13.99,
         category: "academia",
-        image: "images/book5.jpg" // Replace with your actual image path
+        image: "../images/Acadamia.jpg"
     },
     {
         id: 6,
@@ -53,7 +53,7 @@ const recommendedBooks = [
         author: "Muhammad Asad",
         price: 18.95,
         category: "islam",
-        image: "images/book6.jpg" // Replace with your actual image path
+        image: "../images/roadtomeca.jpg" // Updated image path
     },
     {
         id: 7,
@@ -61,7 +61,7 @@ const recommendedBooks = [
         author: "Matt Haig",
         price: 16.99,
         category: "fiction",
-        image: "images/book7.jpg" // Replace with your actual image path
+        image: "../images/WebBook.jpg"
     }
 ];
 

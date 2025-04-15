@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function loadBookDetails(book) {
-        console.log("Loading book details for:", book.title);
         // Your implementation
     }
 
@@ -160,7 +159,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 const platform = this.getAttribute('data-platform');
                 const bookTitle = encodeURIComponent(bookData[bookId].title);
-                const bookImage = encodeURIComponent(bookData[bookId].image); // Used in Pinterest sharing
+                const bookUrl = encodeURIComponent(window.location.href);
+                const bookImage = encodeURIComponent(bookData[bookId].image);
 
                 let shareUrl = '';
 
@@ -190,18 +190,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 const icon = this.querySelector('svg');
 
                 if (isWishlisted) {
-                    icon.innerHTML = '<path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>';
+                    icon.innerHTML = <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>;
                     Swal.fire({
                         icon: 'success',
-                        text: `We've saved "${bookData[bookId].title}" for you`,
+                        title: '❤ Added to Wishlist!',
+                        text: "We've saved ${bookData[bookId].title} for you",
+                        showConfirmButton: false,
                         timer: 1500,
                         background: '#f5e6ea'
                     });
                 } else {
-                    icon.innerHTML = '<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>';
+                    icon.innerHTML = <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>;
                     Swal.fire({
                         icon: 'info',
+                        title: '💔 Removed from Wishlist',
                         text: `Removed "${bookData[bookId].title}" from your list`,
+                        showConfirmButton: false,
                         timer: 1500,
                         background: '#f5e6ea'
                     });

@@ -1,0 +1,56 @@
+/* navBar.css */
+
+/* Base Reset - Moved to top */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif; /* Consistent font */
+}
+
+header {
+    background-color: var(--primary-maroon, #5a0017); /* Added background using variable from book_details.css, with fallback */
+    padding: 15px 0; /* Added some padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.logo {
+    font-size: 1.8rem; /* Adjusted size slightly */
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Added max-width for consistency */
+    margin: 0 auto; /* Center nav content */
+    padding: 0 20px; /* Added horizontal padding */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Adjusted font-weight */
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+    padding-bottom: 5px; /* Add padding for hover effect */
+    border-bottom: 2px solid transparent; /* Prepare for hover effect */
+}
+
+.nav-links a:hover {
+    color: var(--star-gold, #ffd700); /* Use another theme color for hover, with fallback */
+    border-bottom-color: var(--star-gold, #ffd700); /* Highlight on hover */
+}

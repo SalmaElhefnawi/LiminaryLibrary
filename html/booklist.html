@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luminary Library - Book Listing</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="booklist.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/booklist.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav> <!--Nav Bar-->
                 <div class="logo">Luminary Library</div>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="booklist.html" class="active">Books</a></li>
-                    <li><a href="contactUs.html">About</a></li>
-                    <li><a href="index.html">Contact</a></li>
-                    <li><a href="index.html">Sign Up</a></li>
-                    <li><a href="index.html">Log In</a></li>
+                    <li><a href="../html/index.html">Home</a></li>
+                    <li><a href="../html/booklist.html">Books</a></li>
+                    <li><a href="../html/aboutus.html">About Us</a></li>
+                    <li><a href="../html/cart.html">Cart</a></li>
+                    <li><a href="../html/userDashboard.html">Profile</a></li>
                 </ul>
             </nav>
         </div>
@@ -49,10 +48,10 @@
                     
                     <select id="price-filter">
                         <option value="">All Prices</option>
-                        <option value="0-10">Under $10</option>
-                        <option value="10-20">$10 - $20</option>
-                        <option value="20-50">$20 - $50</option>
-                        <option value="50+">Over $50</option>
+                        <option value="0-10">Under EGP 10</option>
+                        <option value="10-20">EGP 10 - EGP 20</option>
+                        <option value="20-50">EGP 20 - EGP 50</option>
+                        <option value="50+">Over EGP 50</option>
                     </select>
                     
                     <input type="text" id="search-input" placeholder="Search by title or author">
@@ -87,57 +86,58 @@
         </div>
     </section>
 
+   
     <footer>
+        <link rel="stylesheet" href="../css/footer.css"> <!-- Font Awesome for icons -->
         <div class="container">
-            <p>&copy; 2023 Luminary Library. All rights reserved.</p>
+           
             
-            <!-- Footer with About Us -->
-            <!-- Decorative floating book icons -->
-            <i class="fas fa-book footer-book-icon" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
-            <i class="fas fa-book-open footer-book-icon" style="top: 30%; right: 15%; animation-delay: 0.5s;"></i>
-            <i class="fas fa-bookmark footer-book-icon" style="bottom: 25%; left: 20%; animation-delay: 1s;"></i>
+  <!-- Footer with About Us -->
+    <!-- Decorative floating book icons -->
+    <i class="fas fa-book footer-book-icon" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
+    <i class="fas fa-book-open footer-book-icon" style="top: 30%; right: 15%; animation-delay: 0.5s;"></i>
+    <i class="fas fa-bookmark footer-book-icon" style="bottom: 25%; left: 20%; animation-delay: 1s;"></i>
 
-            <!-- Wave divider -->
-            <div class="footer-wave"></div>
+    <!-- Wave divider -->
+    <div class="footer-wave"></div>
 
-            <div class="footer-container">
-                <div class="footer-about">
-                    <p>Welcome to Luminary Library Bookstore</p>
-                    <div class="footer-logo">
-                        <a href="aboutUs.html" style="color: white; text-decoration: none;">About Us</a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Bestsellers</a></li>
-                        <li><a href="#">Book</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Literary Lane, Bookville</p>
-                    <p><i class="fas fa-phone"></i> +1234 5678 910</p>
-                    <p><i class="fas fa-envelope"></i> hello@luminarylibrary.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM, Sun: 10AM-6PM</p>
-
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2023 Luminary Bookstore. All rights reserved.</p>
-            </div>
+    <div class="footer-container">
+      <div class="footer-about">
+        <p>Welcome to Luminary Library Bookstore</p>
+        <div class="footer-logo">
+          <a href="../html/aboutUs.html" style="color: white; text-decoration: none;">About Us</a>
         </div>
-    </footer>
+      </div>
 
-    <script src="booklist.js"></script>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../html/index.html">Home</a></li>
+          <li><a href="../html/booklist.html">Books</a></li>
+          <li><a href="../html/cart.html">Cart</a></li>
+          <li><a href="../html/userDashboard.html">Profile</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Literary Lane, Bookville</p>
+        <p><i class="fas fa-phone"></i> +1234 5678 910</p>
+        <p><i class="fas fa-envelope"></i> hello@luminarylibrary.com</p>
+        <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM, Sun: 10AM-6PM</p>
+
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Luminary Bookstore. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <script src="../js/booklist.js"></script>
 </body>
 </html>
