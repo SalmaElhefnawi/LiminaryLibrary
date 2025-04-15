@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup - Old Pages Bookstore</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="form-wrapper">
+            <input type="radio" name="tab" id="login" checked>
+            <input type="radio" name="tab" id="signup">
+            
+            <div class="tabs">
+                <label for="login" class="tab login-tab">Login</label>
+                <label for="signup" class="tab signup-tab">Sign Up</label>
+            </div>
+
+            <form class="form login-form" action="login_process.php" method="POST">
+                <h2>Welcome Back 📚</h2>
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="you@example.com">
+                <label>Password</label>
+                <input type="password" name="password" required placeholder="••••••••">
+                
+                <!-- Submit button for login -->
+                <button type="submit" class="btn">Login</button> <!-- Add this button -->
+            
+                <p class="switch-msg">
+                    Don't have an account? <a href="#" id="switch-to-signup" class="link-switch">Sign up here</a>
+                </p>
+            </form>
+            
+
+
+            <form class="form signup-form" action="signup_process.php" method="POST">
+                <h2>Let's start illuminating! ✨</h2>
+                <label>Full Name</label>
+                <input type="text" name="fullname" required placeholder="John Doe">
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="you@example.com">
+                <label>Password</label>
+                <input type="password" name="password" required placeholder="Create a strong password">
+                
+                <!-- Submit button for signup -->
+                <button type="submit" class="btn">Sign Up</button> <!-- Add this button -->
+            
+                <p class="switch-msg">
+                    Already have an account? <a href="#" id="switch-to-login" class="link-switch">Login here</a>
+                </p>
+            </form>
+            
+            <!-- Modal Popup (Initially hidden) -->
+<div id="successModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p id="successMessage">Success!</p>
+    </div>
+</div>  
+
+        </div>
+    </div>
+    <script src="../js/registration.js"></script>
+</body>
+</html>

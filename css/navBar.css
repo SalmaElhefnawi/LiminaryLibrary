@@ -1,3 +1,4 @@
+
 /* navBar.css */
 
 /* Base Reset - Moved to top */
@@ -20,15 +21,28 @@ header {
     color: #fff;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     max-width: 1200px; /* Added max-width for consistency */
     margin: 0 auto; /* Center nav content */
     padding: 0 20px; /* Added horizontal padding */
+
+
 }
 
 .nav-links {
@@ -43,6 +57,7 @@ nav {
 .nav-links a {
     color: white;
     text-decoration: none;
+
     font-weight: bold; /* Adjusted font-weight */
     transition: color 0.3s;
     letter-spacing: 0.5px;
@@ -53,4 +68,20 @@ nav {
 .nav-links a:hover {
     color: var(--star-gold, #ffd700); /* Use another theme color for hover, with fallback */
     border-bottom-color: var(--star-gold, #ffd700); /* Highlight on hover */
+
+    font-weight: 10000;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--highlight);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+
 }
